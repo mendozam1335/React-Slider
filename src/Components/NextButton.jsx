@@ -1,9 +1,9 @@
 import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 
-const NextButton = () => {
+const NextButton = ({ setCurrentSlide, index }) => {
   const handleOnClick = () => {
-    console.log("Next Clicked");
+    setCurrentSlide(index + 1);
   };
   return (
     <button className="next" onClick={handleOnClick}>

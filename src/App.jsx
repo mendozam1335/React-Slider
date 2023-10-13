@@ -5,13 +5,14 @@ import PrevButton from "./Components/PrevButton";
 import NextButton from "./Components/NextButton";
 
 const App = () => {
-  const [list, setList] = useState(shortList);
+  const [list, setList] = useState(longList);
+  const [currentSlide, setCurrentSlide] = useState(0);
   return (
     <main>
       <section className="slider-container">
-        <Carousel people={list} />
-        <NextButton />
-        <PrevButton />
+        <Carousel people={list} currentSlide={currentSlide} />
+        <NextButton setCurrentSlide={setCurrentSlide} index={currentSlide} />
+        <PrevButton setCurrentSlide={setCurrentSlide} index={currentSlide} />
       </section>
     </main>
   );
